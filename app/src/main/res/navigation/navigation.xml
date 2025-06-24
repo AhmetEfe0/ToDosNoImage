@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="com.ahmetefeozenc.todosnoimage.ui.fragment.MainScreen"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/toSaveScreen"
+            app:destination="@id/saveScreen" />
+        <action
+            android:id="@+id/toUpdateScreen"
+            app:destination="@id/updateScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateScreen"
+        android:name="com.ahmetefeozenc.todosnoimage.ui.fragment.UpdateScreen"
+        android:label="fragment_update_screen"
+        tools:layout="@layout/fragment_update_screen" >
+        <argument
+            android:name="toDo"
+            app:argType="com.ahmetefeozenc.todosnoimage.data.entity.ToDos" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveScreen"
+        android:name="com.ahmetefeozenc.todosnoimage.ui.fragment.SaveScreen"
+        android:label="fragment_save_screen"
+        tools:layout="@layout/fragment_save_screen" />
+
+</navigation>
